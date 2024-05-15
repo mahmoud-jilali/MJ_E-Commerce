@@ -1,0 +1,670 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+*::selection{
+    color: white;
+    background-color: royalblue;
+}
+::-webkit-scrollbar{
+    width: 1rem;
+    height: .5rem;
+}
+::-webkit-scrollbar-track{
+    background-color: none;
+}
+::-webkit-scrollbar-thumb{
+    background-color: royalblue;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+section{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.felx-btn{
+    display: flex;
+    gap: 1rem;
+}
+.msg{
+    position: sticky;
+    top: 0;
+    max-width: 500px;
+    height: 55px;
+    margin: 0 auto;
+    background-color: #f2dede;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+.msg span{
+    font-size: 2rem;
+    color: #a94442;
+}
+.msg i{
+    font-size: 2.5rem;
+    color: red;
+    cursor: pointer;
+}
+.msg i:hover{
+    color: black;
+}
+.msgv{
+    position: sticky;
+    top: 0;
+    max-width: 500px;
+    height: 55px;
+    margin: 0 auto;
+    background-color: lightgreen;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+.msgv span{
+    font-size: 2rem;
+    color: green;
+}
+.msgv i{
+    font-size: 2.5rem;
+    color: green;
+    cursor: pointer;
+}
+.msgv i:hover{
+    color: black;
+}
+.btn,
+.delete-btn,
+.option-btn{
+    display: block;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    width: 100%;
+    font-size: 2rem;
+    color: white;
+    padding: 1rem 3rem;
+    text-transform: capitalize;
+    text-align: center;
+}
+.btn{
+    background-color: #1a73e8;
+}
+.delete-btn{
+    background-color: red;
+}
+.option-btn{
+    background-color: green;
+}
+.btn:hover,
+.option-btn:hover{
+    background-color: white;
+    color: #1a73e8;
+    border: solid 1px #1a73e8;
+}
+.delete-btn:hover{
+    background-color: white;
+    color: red;
+    border: solid 1px red;
+}
+.form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.form-container form{
+    background-color: lightgrey;
+    border-radius: 1rem;
+    border: 2px solid dodgerblue;
+    padding: 2rem;
+    text-align: center;
+    width: 50rem;
+}
+.form-container form h3{
+    font-size: 2.5rem;
+    color: dodgerblue;
+    text-transform: uppercase;
+}
+.form-container form .box{
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    color: black;
+    margin: 1rem 0;
+    border: solid 2px royalblue;
+    font-size: 2rem;
+    border-radius: 1rem;
+}
+.header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 .5rem 1rem lightgray;
+    z-index: 1000;
+}
+.header .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.header .flex .logo{
+    font-size: 2rem;
+    color: dodgerblue;
+    margin-bottom: 1px;
+}
+.header .flex .logo span{
+    font-size: 2rem;
+    color: black;
+}
+.header .flex .navbar a{
+    text-decoration: none;
+    font-size: 15px;
+    color: royalblue;
+    text-transform: uppercase;
+    padding: 5px 3px;
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+    font-weight: bold;
+}
+.header .flex .navbar a:hover{
+    color: blue;
+    opacity: 0.6;
+}
+.header .flex .navbar a::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: dodgerblue;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    transition: 0.5s;
+}
+.header .flex .navbar a:hover::after{
+    width: 100%;
+}
+.header .flex .icons > *{
+    font-size: 2rem;
+    cursor: pointer;
+    color: black;
+    margin-left: 1rem;
+}
+.header .flex .icons > *:hover{
+    color: #1a73e8;
+}
+.header .flex .profil{
+    position: absolute;
+    top: 125%;
+    right: 2rem;
+    background-color: white;
+    box-shadow: 0 .5rem 1rem lightgray;
+    border: solid 1px royalblue;
+    border-radius: 1rem;
+    padding: 2rem;
+    padding-top: 1rem;
+    width: 35rem;
+    display: none;
+    animation: fadeIn .2s linear;
+}
+@keyframes fadeIn {
+    0%{
+        transform: translateY(1rem);
+    }
+}
+.header .flex .profil p{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    color: black;
+}
+.header .flex .profil.active{
+    display: inline-block;
+}
+#menu-btn{
+    display: none;
+}
+.ATB{
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+.ATB .box{
+    text-align: center;
+    background-color: white;
+    border: solid 1px dodgerblue;
+    box-shadow: 0 .5rem 1rem lightgray;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-transform: uppercase;
+}
+.ATB .box h2{
+    font-size: 2rem;
+    color: black;
+    text-transform: uppercase;
+}
+.ATB .box h3{
+    font-size: 1.7rem;
+    color: black;
+    margin: 1rem 0;
+    padding: 1.5rem;
+    border: solid 1px dodgerblue;
+    border-radius: 1rem;
+    background-color: lightcyan;
+}
+.AjtCtgSection form{
+    margin: 0 auto;
+    max-width: 70rem;
+    background-color: lightgray;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem lightgray;
+    border: solid 1px dodgerblue;
+    padding: 2rem;
+}
+.AjtCtgSection form h3{
+    font-size: 2.5rem;
+    color: dodgerblue;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.AjtCtgSection form .flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.AjtCtgSection form .flex .InputBox{
+    flex: 1 1 33rem;
+}
+.AjtCtgSection form .flex .InputBox .box{
+    width: 100%;
+    background-color: white;
+    border: solid 1px dodgerblue;
+    padding: 1.4rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+}
+.AjtCtgSection form .flex .InputBox span{
+    font-size: 1.6rem;
+    color: black;
+}
+.Afch_Ctgs .box_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+.Afch_Ctgs .box_container .box{
+    background-color: lightgray;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem lightgray;
+    border: solid 1px dodgerblue;
+    padding: 1.5rem;
+}
+.Afch_Ctgs .box_container .box img{
+    width: 100%;
+    height: 20rem;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+.Afch_Ctgs .box_container .box span{
+    font-size: 1.5rem;
+    color: darkblue;
+}
+.Afch_Ctgs .box_container .box p{
+    font-size: 1.5rem;
+    color: black;
+    margin: 1rem 0;
+}
+.MdfCtg form{
+    margin: 0 auto;
+    max-width: 50rem;
+    background-color: lightgray;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem lightgray;
+    border: solid 1px dodgerblue;
+    padding: 2rem;
+}
+.MdfCtg form .box{
+    width: 100%;
+    background-color: white;
+    border: solid 1px dodgerblue;
+    padding: 1.4rem;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+}
+.MdfCtg form span{
+    font-size: 1.6rem;
+    color: black;
+}
+.MdfCtg form h3{
+    font-size: 2.5rem;
+    color: dodgerblue;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1.7rem;
+}
+/* **** */
+.AjtPrdSection form{
+    margin: 0 auto;
+    max-width: 70rem;
+    background-color: lightgray;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem lightgray;
+    border: solid 1px dodgerblue;
+    padding: 2rem;
+}
+.AjtPrdSection form h3{
+    font-size: 2.5rem;
+    color: dodgerblue;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.AjtPrdSection form .flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.AjtPrdSection form .flex .InputBox{
+    flex: 1 1 33rem;
+}
+.AjtPrdSection form .flex .InputBox .box{
+    width: 100%;
+    background-color: white;
+    border: solid 1px dodgerblue;
+    padding: 1.4rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+}
+.AjtPrdSection form .flex .InputBox span{
+    font-size: 1.6rem;
+    color: black;
+}
+.vide{
+    border: solid 1px black;
+    border-radius: .5rem;
+    background-color: white;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    color: red;
+}
+.Afch_Prds .box_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+.Afch_Prds .box_container .box{
+    background-color: lightgray;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem lightgray;
+    border: solid 1px dodgerblue;
+    padding: 1.5rem;
+}
+.Afch_Prds .box_container .box img{
+    width: 100%;
+    height: 20rem;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+.Afch_Prds .box_container .box span{
+    font-size: 1.5rem;
+    color: darkblue;
+}
+.Afch_Prds .box_container .box p{
+    font-size: 1.5rem;
+    color: black;
+    margin: 1rem 0;
+}
+/*.Afch_Prds .box_container .box .Prix{
+    font-size: 2rem;
+    color: black;
+    margin: .5rem 0;
+}
+.Afch_Prds .box_container .box .CodeCtg{
+    font-size: 2rem;
+    color: black;
+    margin: 1rem 0;
+}
+.Afch_Prds .box_container .box .Decri{
+    line-height: 2;
+    font-size: 2rem;
+    color: black;
+}*/
+.MdfPrd form{
+    margin: 0 auto;
+    max-width: 50rem;
+    background-color: lightgray;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem lightgray;
+    border: solid 1px dodgerblue;
+    padding: 2rem;
+}
+.MdfPrd form .ImgContainer .MainImg img{
+    height: 20rem;
+    width: 100%;
+    object-fit: contain;
+}
+.MdfPrd form .ImgContainer .SubImgs{
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    justify-content: center;
+}
+.MdfPrd form .ImgContainer .SubImgs img{
+    height: 7rem;
+    width: 7rem;
+    object-fit: contain;
+    border: solid 1px dodgerblue;
+    cursor: pointer;
+    padding: .5rem;
+    border-radius: .5rem;
+    transition: .2s linear;
+}
+.MdfPrd form .ImgContainer .SubImgs img:hover{
+    transform: scale(1.1);
+}
+.MdfPrd form .box{
+    width: 100%;
+    background-color: white;
+    border: solid 1px dodgerblue;
+    padding: 1.4rem;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+}
+.MdfPrd form span{
+    font-size: 1.6rem;
+    color: black;
+}
+.MdfPrd form h3{
+    font-size: 2.5rem;
+    color: dodgerblue;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1.7rem;
+}
+.commands .box_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 45rem);
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+.commands .box_container .box{
+    background-color: lightgray;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem lightgray;
+    border: solid 1px dodgerblue;
+    padding: 2rem;
+    padding-top: 1rem;
+}
+.commands .box_container .box p{
+    padding: .5rem 0;
+    line-height: 2;
+    font-size: 1.5rem;
+    color: darkblue;
+}
+.commands .box_container .box p span{
+    color: black;
+}
+.commands .box_container .box .drop-down{
+    width: 100%;
+    margin: 1rem 0;
+    background-color: lightgray;
+    padding: 1rem 1.4rem;
+    font-size: 1.5rem;
+    color: black;
+    border: solid 1px black;
+    border-radius: .5rem;
+}
+.Compts .box_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+.Compts .box_container .box{
+    background-color: lightgray;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem lightgray;
+    border: solid 1px dodgerblue;
+    padding: 1.5rem;
+    padding-top: 1rem;
+    text-align: center;
+}
+.Compts .box_container .box p{
+    padding: .5rem 0;
+    line-height: 2;
+    font-size: 1.5rem;
+    color: black;
+}
+.Compts .box_container .box p span{
+    color: blue;
+}
+.msgs .box_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+.msgs .box_container .box{
+    background-color: lightgray;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem lightgray;
+    border: solid 1px dodgerblue;
+    padding: 1.5rem;
+    padding-top: 1rem;
+}
+.msgs .box_container .box p{
+    padding: .5rem 0;
+    line-height: 2;
+    font-size: 1.5rem;
+    color: black;
+}
+.msgs .box_container .box p span{
+    color: blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media */
+@media (max-width:1150px){
+    html{
+        font-size: 55%;
+    }
+}
+@media (max-width:1100px){
+    #menu-btn{
+    display: inline-block;
+}
+    .header .flex .navbar{
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        border-top: solid 1px black;
+        border-bottom: solid 1px black;
+        background-color: white;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transform: .3s linear;
+    }
+    .header .flex .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .header .flex .navbar a{
+        display: block;
+        margin: 2rem;
+    }
+}
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+    .felx-btn{
+        flex-flow: column;
+        gap: 0;
+    }
+    .Afch_Prds .box_container{
+        grid-template-columns: 1fr;
+    }
+    .commands .box_container{
+        grid-template-columns: 1fr;
+    }
+    .Compts .box_container{
+        grid-template-columns: 1fr;
+    }
+}

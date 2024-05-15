@@ -1,0 +1,990 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+*::selection{
+    color: white;
+    background-color: royalblue;
+}
+::-webkit-scrollbar{
+    width: 1rem;
+    height: .5rem;
+}
+::-webkit-scrollbar-track{
+    background-color: none;
+}
+::-webkit-scrollbar-thumb{
+    background-color: royalblue;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+section{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.felx-btn{
+    display: flex;
+    gap: 1rem;
+}
+.msg{
+    position: sticky;
+    top: 0;
+    max-width: 500px;
+    height: 55px;
+    margin: 0 auto;
+    background-color: #f2dede;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+.msg span{
+    font-size: 2rem;
+    color: #a94442;
+}
+.msg i{
+    font-size: 2.5rem;
+    color: red;
+    cursor: pointer;
+}
+.msg i:hover{
+    color: black;
+}
+.msgv{
+    position: sticky;
+    top: 0;
+    max-width: 500px;
+    height: 55px;
+    margin: 0 auto;
+    background-color: lightgreen;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+.msgv span{
+    font-size: 2rem;
+    color: green;
+}
+.msgv i{
+    font-size: 2.5rem;
+    color: green;
+    cursor: pointer;
+}
+.msgv i:hover{
+    color: black;
+}
+.btn,
+.delete-btn,
+.option-btn{
+    display: block;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.7rem;
+    color: white;
+    padding: 1rem .5rem;
+    text-transform: normal;
+    text-align: center;
+}
+.btn{
+    background-color: #1a73e8;
+}
+.delete-btn{
+    background-color: red;
+}
+.option-btn{
+    background-color: rgb(8, 185, 8);
+}
+.btn:hover,
+.option-btn:hover{
+    background-color: white;
+    color: #1a73e8;
+    border: solid 1px #1a73e8;
+}
+.delete-btn:hover{
+    background-color: white;
+    color: red;
+    border: solid 1px red;
+}
+.vide{
+    border: solid 1px black;
+    border-radius: .5rem;
+    background-color: white;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    color: red;
+}
+.header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 .5rem 1rem lightgray;
+    z-index: 1000;
+}
+.header .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.header .flex .logo{
+    font-size: 2rem;
+    color: dodgerblue;
+}
+.header .flex .logo span{
+    font-size: 2rem;
+    color: black;
+    text-transform: uppercase;
+}
+.header .flex .navbar a{
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 15px;
+    color: royalblue;
+    text-transform: uppercase;
+    padding: 5px 5px;
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+    position: relative;
+    font-weight: bold;
+}
+.header .flex .navbar a:hover{
+    color: blue;
+    opacity: 0.6;
+}
+.header .flex .navbar a::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: dodgerblue;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    transition: 0.5s;
+}
+.header .flex .navbar a:hover::after{
+    content: '';
+    height: 3px;
+    width: 100%;
+    background: dodgerblue;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+}
+.header .flex .icons > *{
+    font-size: 2rem;
+    cursor: pointer;
+    color: black;
+    margin-left: 1rem;
+}
+.header .flex .icons > *:hover{
+    color: #1a73e8;
+}
+.header .flex .profil{
+    position: absolute;
+    top: 125%;
+    right: 2rem;
+    background-color: white;
+    box-shadow: 0 .5rem 1rem lightgray;
+    border: solid 1px royalblue;
+    border-radius: 1rem;
+    padding: 2rem;
+    padding-top: 1rem;
+    width: 42rem;
+    display: none;
+    animation: fadeIn .2s linear;
+}
+@keyframes fadeIn {
+    0%{
+        transform: translateY(1rem);
+    }
+}
+.header .flex .profil p{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    color: black;
+}
+.header .flex .profil.active{
+    display: inline-block;
+}
+#menu-btn{
+    display: none;
+}
+.accueil-bg{
+    background: url(../Imgs/b-g.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+
+}
+.accueil-bg .slide{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 2rem;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+.accueil-bg .slide .img{
+   flex: 1 1 40rem;
+}
+.accueil-bg .slide .img img{
+    width: 100%;
+    height: 40rem;
+    object-fit: contain;
+}
+.accueil-bg .slide .content{
+    flex: 1 1 40rem;
+} 
+.accueil-bg .slide .content span{
+    font-size: 2rem;
+    color: black;
+} 
+ .accueil-bg .slide .content h3{
+    margin-top: 1rem ;
+    line-height: 3rem;
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    color: black;
+}
+.accueil-bg .slide .content .btn{
+    display: inline-block;
+    width: auto;
+}
+.home-ctg h1{
+    font-size: 2.5rem;
+    color: black;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+}
+.home-ctg .slide{
+    text-align: center;
+    border: solid 1px dodgerblue;
+    border-radius: .5rem;
+    padding: 2rem;
+    box-shadow: 0 .5rem 1rem lightgray;
+    background-color: white;
+    display: inline-block;
+    margin-bottom: 5rem;
+}
+.home-ctg .slide img{
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+.home-ctg .slide h3{
+    font-size: 1.7rem;
+    color: black;
+}
+.home-ctg .slide:hover{
+    background-color: dodgerblue;
+}
+.home-ctg .slide:hover img{
+    filter: invert();
+}
+.home-ctg .slide:hover h3{
+    color: white;
+}
+.home-prd .slide{
+    background-color: white;
+    border-radius: .5rem;
+    border: solid 1px dodgerblue;
+    box-shadow: 0 .5rem 1rem lightgray;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 5rem;
+}
+.home-prd h1{
+    font-size: 2.5rem;
+    color: black;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+}
+.home-prd .slide .fa-eye,
+.home-prd .slide .fa-heart{
+    position: absolute;
+    top: 1rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+    border: solid 1px black;
+    background-color: white;
+    border-radius: .5rem;
+    text-align: center;
+    cursor: pointer;
+    color: black;
+    transition: .2s linear;
+}
+.home-prd .slide .fa-eye{
+    left: -10rem;
+}
+.home-prd .slide .fa-heart{
+    right: -10rem;
+}
+.home-prd .slide .fa-eye:hover,
+.home-prd .slide .fa-heart:hover{
+    background-color: dodgerblue;
+    color: white;
+    border: solid 1px dodgerblue;
+}
+.home-prd .slide:hover .fa-eye{
+    left: 1rem;
+}
+.home-prd .slide:hover .fa-heart{
+    right: 1rem;
+}
+.home-prd .slide .img{
+    height: 20rem;
+    width: 100%;
+    object-fit: contain;
+}
+.home-prd .slide .nom{
+    padding-top: 7rem;
+    font-size: 1.7rem;
+    color: black;
+    margin-bottom: 1.2rem;
+}
+.home-prd .slide .flex{
+    display: flex;
+    margin: 1.3rem 0;
+    align-items: center;
+}
+.home-prd .slide .flex span{
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+.home-prd .slide .flex .prix{
+    font-size: 1.7rem;
+    color: blue;
+    margin-left: 15px;
+}
+.home-prd .slide .flex .Qte{
+    font-size: 1.7rem;
+    border: solid 1px black;
+    border-radius: .5rem;
+    padding: 1rem 1rem;
+    color: black;
+    width: 7rem;
+    height: 3.2rem;
+}
+.form-container h1{
+    font-size: 2.5rem;
+    color: dodgerblue;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.form-container form{
+    max-width: 50rem;
+    margin: 0 auto;
+    border: solid 1px dodgerblue;
+    border-radius: .5rem;
+    padding: 2rem;
+    background-color: lightgray;
+    box-shadow: 0 .5rem 1rem lightgray;
+}
+.form-container form .box{
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 1.7rem;
+    color: black;
+    padding: 1.5rem;
+    border: solid 1px royalblue;
+    border-radius: .5rem;
+}
+.form-container form p{
+    font-size: 1.7rem;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.form-container textarea{
+    height: 20rem;
+    resize: none;
+}
+.ctg_prd .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 37rem);
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+.ctg_prd .box-container .box{
+    background-color: white;
+    border-radius: .5rem;
+    border: solid 1px dodgerblue;
+    box-shadow: 0 .5rem 1rem lightgray;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+.ctg_prd h1{
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+}
+.ctg_prd .box-container .box .fa-eye,
+.ctg_prd .box-container .box .fa-heart{
+    position: absolute;
+    top: 1rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+    border: solid 1px black;
+    background-color: white;
+    border-radius: .5rem;
+    text-align: center;
+    cursor: pointer;
+    color: black;
+    transition: .2s linear;
+}
+.ctg_prd .box-container .box .fa-eye{
+    left: -10rem;
+}
+.ctg_prd .box-container .box .fa-heart{
+    right: -10rem;
+}
+.ctg_prd .box-container .box .fa-eye:hover,
+.ctg_prd .box-container .box .fa-heart:hover{
+    background-color: dodgerblue;
+    color: white;
+    border: solid 1px dodgerblue;
+}
+.ctg_prd .box-container .box:hover .fa-eye{
+    left: 1rem;
+}
+.ctg_prd .box-container .box:hover .fa-heart{
+    right: 1rem;
+}
+.ctg_prd .box-container .box .img{
+    height: 20rem;
+    width: 100%;
+    object-fit: contain;
+}
+.ctg_prd .box-container .box .nom{
+    font-size: 1.7rem;
+    color: black;
+    margin-bottom: 1.2rem;
+}
+.ctg_prd .box-container .box .flex{
+    display: flex;
+    margin: 1.3rem 0;
+    align-items: center;
+    gap: 1rem;
+}
+.ctg_prd .box-container .box .flex span{
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+.ctg_prd .box-container .box .flex .prix{
+    font-size: 1.5rem;
+    color: blue;
+    margin-left: 5px;
+}
+.ctg_prd .box-container .box .flex .Qte{
+    font-size: 1.5rem;
+    border: solid 1px black;
+    border-radius: .5rem;
+    padding: 1rem 1rem;
+    color: black;
+    width: 7rem;
+    height: 3rem;
+}
+.ctg_prd .box-container .box .flex .fa-edit{
+    width: 5rem;
+    border-radius: .5rem;
+    background-color: orange;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    height: 5rem;
+}
+.ctg_prd .box-container .box .flex .fa-edit:hover{
+    border: solid 1px orange;
+    color: orange;
+    background-color: white;
+}
+.ctg_prd .box-container .box .total-paiment{
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: black;
+}
+.ctg_prd .box-container .box .total-paiment span{
+    color: rgb(0, 170, 0);
+}
+.wishlist_total{
+    margin: 0 auto;
+    margin-top: 2rem;
+    max-width: 50rem;
+    background-color: white;
+    border: solid 1px dodgerblue;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem lightgray;
+    padding: 2rem;
+    text-align: center;
+}
+.wishlist_total p{
+    font-size: 3rem;
+    color: blue;
+    margin-bottom: 2rem;
+}
+.wishlist_total p span{
+    color: rgb(0, 170, 0);
+}
+.cart_total{
+    margin: 0 auto;
+    margin-top: 2rem;
+    max-width: 50rem;
+    background-color: white;
+    border: solid 1px dodgerblue;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem lightgray;
+    padding: 2rem;
+    text-align: center;
+}
+.cart_total p{
+    font-size: 3rem;
+    color: blue;
+    margin-bottom: 2rem;
+}
+.cart_total p span{
+    color: rgb(0, 170, 0);
+}
+.disabled{
+    user-select: none;
+    pointer-events: none;
+    opacity: .5;
+}
+.view form{
+    background-color: white;
+    border: solid 1px royalblue;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem lightgray;
+}
+.view h1{
+    font-size: 2.5rem;
+    color: black;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+}
+.view form .p-img{
+    flex: 1 1 40rem;
+}
+.view form .content{
+    flex: 1 1 40rem;
+}
+.view form .p-img .g-img img{
+    height: 20rem;
+    width: 100%;
+    object-fit: contain;
+}
+.view form .p-img .pt-img{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1.5rem;
+}
+.view form .p-img .pt-img img{
+    height: 10rem;
+    width: 15rem;
+    border: solid 1px royalblue;
+    cursor: pointer;
+    transition: .2sec linear;
+    object-fit: contain;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+.view form .p-img .pt-img img:hover{
+    transform: scale(1);
+}
+.view .box .content .nom{
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+}
+.view .box .flex{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+}
+.view .box .flex{
+    font-size: 1.5rem;
+    color: black;
+}
+.view .box .flex .qte{
+    padding: 1rem 1.5rem;
+    border: solid 1px black;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    color: black;
+}
+.view .box .description{
+    font-size: 1.5rem;
+    color: black;
+    line-height: 3;
+    margin: 1rem 0;
+}
+.apropos .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 30px 0;
+}
+.apropos .row .eshop{
+    flex: 1 1 40rem;
+}
+.apropos .row .eshop p{
+    width: 100%;
+    font-size: 8rem;
+    color: dodgerblue;
+}
+.apropos .row .eshop p span{
+    color: black;
+}
+.apropos .row .content{
+    flex: 1 1 40rem;
+}
+.apropos .row .content h3{
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    color: dodgerblue;
+}
+.apropos .row .content p{
+    padding: 1rem 0;
+    line-height: 2;
+    font-size: 1.7rem;
+    color: black;
+}
+.apropos .row .content .btn{
+    display: inline-block;
+    width: auto;
+    text-transform: capitalize;
+}
+.commentaires h1{
+    font-size: 3rem;
+    text-align: center;
+    margin: 25px 0;
+    color: black;
+    text-transform: uppercase;
+}
+.commentaires .slide{
+    background-color: white;
+    border: solid 1px royalblue;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem lightgray;
+    padding: 2rem;
+    text-align: center; 
+}
+.commentaires .slide img{
+    height: 10rem;
+    width: 10rem;
+    object-fit: contain;
+    border-radius: 500%;
+}
+.commentaires .slide p{
+    padding: 1rem 0;
+    line-height: 2;
+    font-size: 1.7rem;
+    color: black;
+}
+.commentaires .slide .avis{
+    display: inline-block;
+    padding: 1rem 1rem;
+    background-color: white;
+}
+.commentaires .slide .avis i{
+    font-size: 2rem;
+    color: orange;
+    margin: 0 1rem;
+}
+.commentaires .slide h3{
+    font-size: 1.7rem;
+    margin-top: 1rem;
+}
+.recherche form{
+    display: flex;
+    gap: 1rem;
+}
+.recherche form .box{
+    padding: 1.5rem;
+    font-size: 1.7rem;
+    color: black;
+    border: solid 1px royalblue;
+    border-radius: 1rem;
+    background-color: lightgray;
+    box-shadow: 0 .5rem 1rem lightgray;
+    width: 100%;
+}
+.recherche form .fa-search{
+    width: 5rem;
+    font-size: 2rem;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+.recherche form .fa-search:hover{
+    border: solid 1px dodgerblue;
+    border-radius: 1rem;
+    background-color: white;
+    color: dodgerblue;
+}
+.pass_com .display_com{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+.pass_com .display_com p{
+    padding: 1rem 3rem;
+    border: solid 1px dodgerblue;
+    border-radius: .5rem;
+    font-size: 2rem;
+    color: black;
+    box-shadow: 0 .5rem 1rem lightgray;
+    background-color: white;
+}
+.pass_com .display_com p span{
+    color: rgb(0, 170, 0);
+}
+.pass_com .total_prix{
+    width: 100%;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    font-size: 2rem;
+    color: darkblue;
+}
+.pass_com .total_prix span{
+    color: rgb(0, 170, 0); 
+}
+.pass_com form{
+    border: solid 1px royalblue;
+    border-radius: .5rem;
+    padding: 2.5rem;
+    box-shadow: 0 .5rem 1rem lightgray;
+    background-color: white;
+}
+.pass_com form .flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.pass_com form .flex .inputBox{
+    flex: 1 1 50rem;
+}
+.pass_com form .flex .inputBox span{
+    font-size: 1.7rem;
+    color: black;
+}
+.pass_com form .flex .carte_infos{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.pass_com form .flex .carte_infos #carteInfos{
+    display: none;
+}
+.pass_com form .flex .carte_infos .flexbox{
+    display: flex;
+    gap: 1.5rem;
+}
+.pass_com form .flex .carte_infos .flexbox .inputBox{
+    flex: 1 1 50rem;
+}
+.pass_com form .flex .inputBox .box{
+    width: 100%;
+    border: solid 1px dodgerblue;
+    border-radius: .5rem;
+    background-color: rgb(231, 231, 231);
+    padding: 1.5rem;
+    font-size: 1.7rem;
+    color: black;
+    margin: .5rem 0;
+}
+.afch_commandes h1{
+    font-size: 3rem;
+    color: black;
+    text-align: center;
+    margin: 3rem 0;
+    text-transform: uppercase;
+}
+.afch_commandes .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+.afch_commandes .box-container .box{
+    background-color: lightgray;
+    border: solid 1px dodgerblue;
+    border-radius: .5rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 .5rem 1rem lightgray;
+    flex: 1 1 40rem;
+}
+.afch_commandes .box-container .box p{
+    margin: 1rem 0;
+    font-size: 1.7rem;
+    color: black;
+    line-height: 1.5;
+}
+.afch_commandes .box-container .box p span{
+    color: blue;
+}
+
+
+
+.footer{
+    background-color: lightsteelblue;
+}
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+    align-items: flex-start;
+}
+.footer .box-container .box h3{
+    font-size: 2rem;
+    color: black;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
+.footer .box-container a{
+    display: block;
+    padding: 1rem 0;
+    color: blue;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.footer .box-container a:hover{
+    color: black;
+}
+footer .box-container a i{
+    padding-right: 1.5rem;
+    transition: .2s linear;
+    color: blue;
+    font-weight: bold;
+}
+footer .box-container a:hover i{
+    padding-right: 2rem;
+    color: black;
+}
+.footer .copy-r{
+    padding: 2rem;
+    text-align: center;
+    border-top: solid 1px black;
+    font-size: 2rem;
+    padding-bottom: 2rem;
+
+}
+.footer .copy-r span{
+    color: blue;
+}
+
+
+
+
+
+
+
+
+
+/* media */
+@media (max-width:990px){
+    html{
+        font-size: 55%;
+    }
+}
+@media (max-width:950px){
+    #menu-btn{
+    display: inline-block;
+}
+    .header .flex .navbar{
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        border-top: solid 1px black;
+        border-bottom: solid 1px black;
+        background-color: white;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transform: .3s linear;
+    }
+    .header .flex .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .header .flex .navbar a{
+        display: block;
+        margin: 2rem;
+    }
+    .accueil-bg .slide .content{
+        text-align: center;
+    }
+    .accueil-bg .slide .content h3{
+        font-size: 3.5rem;
+        line-height: initial;
+        padding: 1rem 0;
+    }
+}
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+    .felx-btn{
+        flex-flow: column;
+        gap: 0;
+    }
+    .ctg_prd{
+        grid-template-columns: 1fr;
+    }
+    .view form .p-img .pt-img img{
+        width: 8rem;
+        height: 6rem;
+    }
+}
